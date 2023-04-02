@@ -23,6 +23,7 @@ function updateContacts (contacts){
 async function getById (id){
     const contacts = await readContacts();
     const contact = contacts.find(contact => contact.id===id);
+   
     return contact;
 }
 

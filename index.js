@@ -35,6 +35,9 @@ async function invokeAction({ action, id, name, email, phone }) {
 
     case "remove":
       const newContacts = await contacts.removeContact(id);
+      if(newContacts.length===0){ console.log(`There is no contact with id "${id}". Maybe you have already removed this contact.`);
+      break
+    }
       console.log("You successfully removed this contact!",newContacts)
       break;
 
